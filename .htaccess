@@ -1,0 +1,12 @@
+
+DirectoryIndex index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security
+<Files ~ "\.(env|log|ini)$">
+    Order allow,deny
+    Deny from all
+</Files>
